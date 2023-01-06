@@ -6,8 +6,6 @@
 //
 // Base class takes care of all the key behavioral aspects.
 
-@import 'sass:list';
-
 .custom-control {
   position: relative;
   z-index: 1;
@@ -109,7 +107,7 @@
     width: $custom-control-indicator-size;
     height: $custom-control-indicator-size;
     content: '';
-    background: list.slash(50%, $custom-control-indicator-bg-size) no-repeat;
+    background: 50% / #{$custom-control-indicator-bg-size} no-repeat;
   }
 }
 
