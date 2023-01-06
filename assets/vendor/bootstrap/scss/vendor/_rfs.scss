@@ -44,10 +44,9 @@ $rfs-base-font-size-unit: unit($rfs-base-font-size);
 
 // Remove px-unit from $rfs-base-font-size for calculations
 @if $rfs-base-font-size-unit == 'px' {
-  $rfs-base-font-size: $rfs-base-font-size / ($rfs-base-font-size * 0 + 1);
+  $rfs-base-font-size: $rfs-base-font-size;
 } @else if $rfs-base-font-size-unit == 'rem' {
-  $rfs-base-font-size: $rfs-base-font-size /
-    ($rfs-base-font-size * 0 + 1 / $rfs-rem-value);
+  $rfs-base-font-size: $rfs-base-font-size * $rfs-rem-value;
 }
 
 // Cache $rfs-breakpoint unit to prevent multiple calls
@@ -62,7 +61,7 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
   $rfs-breakpoint-unit-cache ==
   'em'
 {
-  $rfs-breakpoint: calc($rfs-breakpoint * $rfs-rem-value);
+  $rfs-breakpoint: calc(#{$rfs-breakpoint} / (#{$rfs-breakpoint} * 0 + 1));
 }
 
 // Responsive font-size mixin
@@ -95,12 +94,12 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
     @if $fs-unit == 'px' {
       $fs: $fs;
     } @else if $fs-unit == 'rem' {
-      $fs: calc($fs * $rfs-rem-value);
+      $fs: $fs * $rfs-rem-value;
     }
 
     // Set default font-size
     @if $rfs-font-size-unit == rem {
-      $rfs-static: #{calc($fs / $rfs-rem-value)}rem#{$rfs-suffix};
+      $rfs-static: #{calc(#{$fs} / #{$rfs-rem-value})}rem#{$rfs-suffix};
     } @else if $rfs-font-size-unit == px {
       $rfs-static: #{$fs}px#{$rfs-suffix};
     } @else {
@@ -115,7 +114,7 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
 
       // Calculate minimum font-size for given font-size
       $fs-min: $rfs-base-font-size +
-        calc(($fs - $rfs-base-font-size) / $rfs-factor);
+        calc((#{$fs} - #{$rfs-base-font-size}) / #{$rfs-factor});
 
       // Calculate difference between given font-size and minimum font-size for given font-size
       $fs-diff: $fs - $fs-min;
@@ -124,7 +123,7 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
       // No need to check if the unit is valid, because we did that before
       $min-width: if(
         $rfs-font-size-unit == rem,
-        #{calc($fs-min / $rfs-rem-value)}rem,
+        #{calc(#{$fs-min} / #{$rfs-rem-value})}rem,
         #{$fs-min}px
       );
 
@@ -133,7 +132,7 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
 
       // Calculate the variable width between 0 and $rfs-breakpoint
       $variable-width: #{calc(
-          $fs-diff * 100 / $rfs-breakpoint
+          #{$fs-diff} * 100 / #{$rfs-breakpoint}
         )}#{$variable-unit};
 
       // Set the calculated font-size.
@@ -150,7 +149,7 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
       // RFS breakpoint formatting
       @if $rfs-breakpoint-unit == em or $rfs-breakpoint-unit == rem {
         $mq-value: #{calc(
-            $rfs-breakpoint / $rfs-rem-value
+            #{$rfs-breakpoint} / #{$rfs-rem-value}
           )}#{$rfs-breakpoint-unit};
       } @else if $rfs-breakpoint-unit == px {
         $mq-value: #{$rfs-breakpoint}px;
