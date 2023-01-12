@@ -26,8 +26,9 @@ layout: default
                 >{% if page.author %}{{ page.author }}{% else %}{{ site.author
                 }}{% endif %}</a
               >
-              on {{ page.date | date: '%B %d, %Y' }} &middot; {% if page.update
-              %}Updated on {{ page.update | date: '%B %d, %Y' }}{% endif %}
+              on {{ page.date | date: '%B %d, %Y' }}{% if page.update %}
+              &middot; Updated on {{ page.update | date: '%B %d, %Y' }}{% endif
+              %}
             </span>
             <span class="meta"
               >{% include read_time.html content=page.content %}</span
