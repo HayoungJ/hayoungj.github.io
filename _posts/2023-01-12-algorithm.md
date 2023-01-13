@@ -6,7 +6,7 @@ date: 2023-01-12
 update: 2023-01-13
 background: '/img/posts/02.jpg'
 background_author:
-  '사진: <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/nuz3rK5iiKg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>의 <a href="https://unsplash.com/@alpridephoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Андрей Сизов</a>
+  '사진: <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/nuz3rK5iiKg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>의 <a href="https://unsplash.com/@alpridephoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Андрей Сизов</a>
   '
 use_math: true
 ---
