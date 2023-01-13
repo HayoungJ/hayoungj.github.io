@@ -5,6 +5,9 @@ subtitle: '누구나 자료구조와 알고리즘 (개정 2판)'
 date: 2023-01-05
 update: 2023-01-06
 background: '/img/posts/01.jpg'
+background_author:
+  '사진: <a href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/fyeOxvYvIyY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>의 <a href="https://unsplash.com/@purzlbaum?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Claudio Schwarz</a>
+  '
 ---
 
 <blockquote class="blockquote">
