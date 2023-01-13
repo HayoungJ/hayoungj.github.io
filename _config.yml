@@ -11,6 +11,10 @@ careerly_userkey: 503300
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 paginate: 5
 paginate_path: '/posts/page:num/'
 plugins:
@@ -20,3 +24,4 @@ plugins:
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  math_engine: mathjax
